@@ -1,14 +1,10 @@
+// temp ignore unused variables
+// deno-lint-ignore-file no-unused-vars
+// @deno-types="npm:@types/leaflet@^1.9.14"
+import leaflet from "leaflet";
+
+import "leaflet/dist/leaflet.css";
 import "./style.css";
-const APP_NAME = "Geocoin Demo";
-document.title = APP_NAME;
 
-// first tiny change
-const button = document.createElement("button");
-button.textContent = "click!";
-button.style.display = "block";
-button.style.margin = "auto";
+import luck from "./luck.ts";
 
-button.addEventListener("click", () => {
-  alert("you clicked the button!");
-});
-document.body.appendChild(button);
