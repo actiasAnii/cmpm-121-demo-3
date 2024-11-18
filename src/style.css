@@ -46,18 +46,18 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #588157;
   cursor: pointer;
   transition: border-color 0.25s;
   color: white;
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: #3a5a40;
 }
 
 button:disabled {
-  background-color: #555;
+  background-color: #a3b18a;
   cursor: not-allowed;
 }
 
@@ -67,26 +67,28 @@ button:focus-visible {
 }
 
 /* main container layout */
-#container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+#gameContainer {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  border: 10px solid #3a5a40;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0px;
 }
 
 /* control panel styles */
 #controlPanel {
-  background-color: #333;
-  color: white;
-  padding: 0.8rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-
+  grid-column: 1 / 2;
+  padding: 10px;
+  background-color: #1a1a1a;
+  text-align: center;
+  z-index: 99999;
 }
 
 #controlPanel button {
@@ -99,6 +101,7 @@ button:focus-visible {
   cursor: pointer;
   color: white;
   transition: border-color 0.25s;
+  z-index: 9999999;
 }
 
 #controlPanel button:hover {
@@ -119,61 +122,41 @@ button:focus-visible {
 #map {
   width: 100%;
   height: 80vh;
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   margin: 1rem 0;
+  grid-column: 1 / 2;
+  border-right: 2px solid #ddd;
 }
 
-/* side panel (status and cache) */
-#panel {
-  padding: 1rem;
-  background: #2b2b2b;
-  color: white;
-  position: absolute;
-  top: 80vh;
-  width: 100%;
-}
-
+/* for status panel */
 #statusPanel {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  background-color: #1e1e1e;
-  border-radius: 8px;
-}
-
-#cacheDetails {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 1rem;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
-
-#cacheDetails h3 {
-  margin-top: 0;
-  font-size: 1.5rem;
-}
-
-#cacheDetails p {
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
+  grid-column: 2 / 3;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-left: 10px solid #ddd;
+  margin-left: 30px;
 }
 
 /* alt styles */
 @media (min-width: 768px) {
   #controlPanel {
-    padding: 0.5rem; /* Reduced padding */
-    gap: 0.5rem; /* Smaller gap between buttons */
-    top: 20px; /* Adjust the top position for larger screens */
+    padding: 0.5rem; /* reduced padding */
+    gap: 0.5rem; /* smaller gap between buttons */
+    top: 20px;
   }
 
   #controlPanel button {
     padding: 0.4em 1em;
-    font-size: 1.2em; /* Smaller button size */
+    font-size: 1.2em; /* smaller button size */
   }
 
   #map {
-    height: 70vh; /* Adjust the map height for larger screens */
+    height: 70vh; /* adjust map height for larger screens */
   }
 }
 
@@ -192,8 +175,7 @@ button:focus-visible {
   }
 
   #controlPanel,
-  #statusPanel,
-  #cacheDetails {
+  #statusPanel {
     background-color: #e5e5e5;
     color: #333;
   }

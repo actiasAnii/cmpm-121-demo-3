@@ -6,7 +6,7 @@
     <title>Geocoin Carrier</title>
   </head>
   <body>
-    <div id="container">
+    <div id="gameContainer">
       <div id="controlPanel">
         <button id="sensor" title="sensor">🌐</button>
         <button id="north" title="north">⬆️</button>
@@ -15,16 +15,8 @@
         <button id="east" title="east">➡️</button>
         <button id="reset" title="reset">🚮</button>
       </div>
-    
-      <!-- Map and side panel -->
       <div id="map"></div>
-      <div id="panel">
         <div id="statusPanel">Player Points: 0</div>
-        <div id="cacheDetails">
-          <h3>Cache Details</h3>
-          <p>select a cache on the map to see details</p>
-        </div>
-      </div>
     </div>
   </div> 
     <script type="module" src="/src/main.ts"></script>
